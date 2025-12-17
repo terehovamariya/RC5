@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Шифр RC5</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🔐 Шифр RC5</h1>
+        <div class="subtitle">Блочный шифр с переменными параметрами</div>
+      </header>
+
+      <div class="main-content">
+        <div class="controls-section">
+          <div class="input-section">
+            <div class="form-group">
+              <label for="text">Текст для шифрования:</label>
+              <textarea id="text" placeholder="Введите текст...">
+Это тестовое сообщение для демонстрации работы шифра RC5</textarea
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="key">Ключ:</label>
+              <input
+                type="text"
+                id="key"
+                placeholder="Введите ключ"
+                value="MySecretKey123"
+              />
+            </div>
+          </div>
+
+          <div class="params-section">
+            <div class="form-group">
+              <label>Параметры шифра:</label>
+              <div class="param-group">
+                <div class="param-item">
+                  <label for="rounds">Раунды:</label>
+                  <input
+                    type="number"
+                    id="rounds"
+                    value="12"
+                    min="1"
+                    max="255"
+                  />
+                </div>
+                <div class="param-item">
+                  <label for="blockSize">Размер слова:</label>
+                  <select id="blockSize">
+                    <option value="32">32 бита</option>
+                    <option value="64" selected>64 бита</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div id="status" class="status-indicator"></div>
+          </div>
+        </div>
+
+        <div class="button-group">
+          <button class="encrypt-btn" onclick="encryptText()">
+            <span>🔒</span> Зашифровать
+          </button>
+          <button class="decrypt-btn" onclick="decryptText()">
+            <span>🔓</span> Расшифровать
+          </button>
+        </div>
+
+        <div class="results-section">
+          <div class="result-box">
+            <div class="result-label"><span>📤</span> Зашифрованный текст:</div>
+            <div id="encryptedResult" class="result-text">
+              Здесь появится зашифрованный текст...
+            </div>
+            <div id="encryptedHex" class="hex-display"></div>
+          </div>
+
+          <div class="result-box">
+            <div class="result-label">
+              <span>📥</span> Расшифрованный текст:
+            </div>
+            <div id="decryptedResult" class="result-text">
+              Здесь появится расшифрованный текст...
+            </div>
+            <div id="decryptedHex" class="hex-display"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="utf8-utils.js"></script>
+    <script src="rc5-cipher.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

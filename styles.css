@@ -1,0 +1,261 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: linear-gradient(135deg, #1a2980 0%, #26d0ce 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+header {
+  background: linear-gradient(135deg, #1a2980 0%, #26d0ce 100%);
+  color: white;
+  padding: 40px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+  font-size: 1.2em;
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
+.main-content {
+  padding: 30px;
+}
+
+.controls-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.input-section {
+  flex: 1;
+  min-width: 300px;
+}
+
+.params-section {
+  flex: 1;
+  min-width: 300px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #555;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #1a2980;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+  font-family: monospace;
+}
+
+.button-group {
+  display: flex;
+  gap: 15px;
+  margin: 30px 0;
+  justify-content: center;
+}
+
+button {
+  padding: 15px 40px;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.encrypt-btn {
+  background: linear-gradient(135deg, #1a2980 0%, #26d0ce 100%);
+  color: white;
+}
+
+.decrypt-btn {
+  background: linear-gradient(135deg, #00b09b 0%, #96c93d 100%);
+  color: white;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.results-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.result-box {
+  flex: 1;
+  min-width: 300px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  border-left: 4px solid #1a2980;
+}
+
+.result-label {
+  font-weight: 600;
+  color: #1a2980;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1em;
+}
+
+.result-text {
+  font-family: monospace;
+  font-size: 16px;
+  word-break: break-word;
+  padding: 15px;
+  background: white;
+  border-radius: 5px;
+  border: 1px solid #e0e0e0;
+  min-height: 100px;
+  overflow-y: auto;
+}
+
+.hex-display {
+  font-family: monospace;
+  background: #333;
+  color: #0f0;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.info-section {
+  background: #e3f2fd;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+.info-section h3 {
+  color: #1a2980;
+  margin-bottom: 15px;
+}
+
+.info-section ul {
+  padding-left: 20px;
+}
+
+.info-section li {
+  margin-bottom: 10px;
+}
+
+.param-group {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.param-item {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .controls-section,
+  .results-section {
+    flex-direction: column;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .param-group {
+    flex-direction: column;
+  }
+}
+
+.status-indicator {
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.status-good {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #c8e6c9;
+}
+
+.status-error {
+  background: #ffebee;
+  color: #c62828;
+  border: 1px solid #ffcdd2;
+}
+
+.encoding-info {
+  background: #fff3e0;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+  font-size: 14px;
+  border-left: 4px solid #ff9800;
+}
